@@ -1,4 +1,4 @@
-package org.algoclass.ysavenko.multiplicity;
+package org.algoclass.ysavenko.multiplication;
 
 public interface Multiplication {
 
