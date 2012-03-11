@@ -1,24 +1,26 @@
 package org.algoclass.ysavenko.multiplication;
 
-public class MultiplicationRecursiveImpl extends AbstractMultiplication implements Multiplication {
+public class MultiplicationRecursiveImpl extends AbstractMultiplication
+	implements Multiplication {
 
-	public long multiply(long number1, long number2) {
+    public long multiply(long number1, long number2) {
 
-		final int n = Math.max(getLength(number1), getLength(number2));
-		final int n2 = n / 2;
+	final int n = Math.max(getLength(number1), getLength(number2));
+	final int n2 = n / 2;
 
-		if (n == 1) {
-			return number1 * number2;
-		}
-
-		final long powerTenN2 = powerTen(n2);
-
-		final long a = number1 / powerTenN2;
-		final long b = number1 - a * powerTenN2;
-		final long c = number2 / powerTenN2;
-		final long d = number2 - c * powerTenN2;
-
-		return powerTenN2 * powerTenN2 * multiply(a, c) + powerTenN2 * (multiply(a, d) + multiply(b, c)) + multiply(b, d);
+	if (n == 1) {
+	    return number1 * number2;
 	}
+
+	final long powerTenN2 = powerTen(n2);
+
+	final long a = number1 / powerTenN2;
+	final long b = number1 - a * powerTenN2;
+	final long c = number2 / powerTenN2;
+	final long d = number2 - c * powerTenN2;
+
+	return powerTenN2 * powerTenN2 * multiply(a, c) + powerTenN2
+		* (multiply(a, d) + multiply(b, c)) + multiply(b, d);
+    }
 
 }
