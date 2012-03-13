@@ -30,23 +30,36 @@ public class InversionFinderTest {
 
     @Test
     public void testFind_NoInversions() throws Exception {
-	inversionFinder.find(new Integer[] { 1, 2, 3, 4, 5 });
+	inversionFinder.count(new Integer[] { 1, 2, 3, 4, 5 });
     }
 
     @Test
     public void testFind_OneInversion() throws Exception {
-	Assert.assertEquals(1, inversionFinder.find(new Integer[] { 1, 3, 2 }));
+	Assert.assertEquals(1, inversionFinder.count(new Integer[] { 1, 3, 2 }));
     }
 
     @Test
-    public void testFind() throws Exception {
+    public void testFind_Reverted() throws Exception {
+	final Integer[] array = new Integer[] { 6, 5, 4, 3, 2, 1 };
+	Assert.assertEquals(array.length * (array.length - 1) / 2,
+		inversionFinder.count(array));
+    }
+
+    @Test
+    public void testFind_OddLengthArray() throws Exception {
 	Assert.assertEquals(5,
-		inversionFinder.find(new Integer[] { 1, 7, 4, 6, 2 }));
+		inversionFinder.count(new Integer[] { 1, 7, 4, 6, 2 }));
+    }
+
+    @Test
+    public void testFind_EvenLengthArray() throws Exception {
+	Assert.assertEquals(8,
+		inversionFinder.count(new Integer[] { 1, 7, 4, 3, 6, 2 }));
     }
 
     @Test
     public void testFind_BigArray() throws Exception {
 	Assert.assertEquals(2407905288L,
-		inversionFinder.find(ArrayReader.read()));
+		inversionFinder.count(ArrayReader.read()));
     }
 }

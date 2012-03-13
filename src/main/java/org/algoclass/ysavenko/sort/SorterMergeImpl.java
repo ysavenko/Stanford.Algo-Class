@@ -17,10 +17,9 @@ public class SorterMergeImpl<T extends Comparable<T>> implements Sorter<T> {
 	sort(right);
 
 	for (int i = 0, j = 0, k = 0; k < length; k++) {
-	    final boolean jIsOutOfBounds = j >= right.length;
-	    final boolean iIsInBounds = i < left.length;
-	    if (jIsOutOfBounds
-		    || (iIsInBounds && left[i].compareTo(right[j]) < 0)) {
+	    final boolean jOutOfBounds = j >= right.length;
+	    final boolean iInBounds = i < left.length;
+	    if (jOutOfBounds || (iInBounds && left[i].compareTo(right[j]) < 0)) {
 		array[k] = left[i++];
 	    } else {
 		array[k] = right[j++];
