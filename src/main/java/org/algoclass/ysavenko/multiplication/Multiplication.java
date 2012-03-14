@@ -1,6 +1,6 @@
 package org.algoclass.ysavenko.multiplication;
 
-public interface Multiplication {
+public interface Multiplication<T> {
 
-    long multiply(long number1, long number2);
+    T multiply(T arg1, T arg2);
 }

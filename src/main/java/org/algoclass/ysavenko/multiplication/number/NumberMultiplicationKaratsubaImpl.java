@@ -1,9 +1,9 @@
-package org.algoclass.ysavenko.multiplication;
+package org.algoclass.ysavenko.multiplication.number;
 
-public class MultiplicationKaratsubaImpl extends AbstractMultiplication
-	implements Multiplication {
+public class NumberMultiplicationKaratsubaImpl extends AbstractNumberMultiplication
+	implements NumberMultiplication {
 
-    public long multiply(long number1, long number2) {
+    public Long multiply(Long number1, Long number2) {
 
 	final int n = Math.max(getLength(number1), getLength(number2));
 

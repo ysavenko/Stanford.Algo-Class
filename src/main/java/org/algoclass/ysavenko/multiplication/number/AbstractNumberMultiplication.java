@@ -1,6 +1,6 @@
-package org.algoclass.ysavenko.multiplication;
+package org.algoclass.ysavenko.multiplication.number;
 
-public class AbstractMultiplication {
+public class AbstractNumberMultiplication {
 
     protected int[] getDigits(long number) {
 	final long i = number / 10;
